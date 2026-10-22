@@ -16,6 +16,18 @@ The Command Center action **Export conversation as Markdown or JSON** and `/expo
 
 Host exports go to `~/Paseo Exports`. Session exports go to `<session working directory>/Paseo Exports`. Custom folders accept absolute paths or `~/...`. Folders are created as needed, and files use a sanitized title, agent ID, timestamp, and random suffix. Existing files are never overwritten. Files are created with mode `0600`; newly created folders use `0700`, subject to platform filesystem support. Remote host destinations refer to the remote machine. Clipboard exports refer to the device running the app.
 
+## Saved defaults
+
+Open **Export**, select your format, destination, and content options, then expand **Defaults**:
+
+- **Save for workspace** remembers those settings for every session in the current workspace.
+- **Save for host** sets the fallback for workspaces on the connected host.
+- **Use host defaults** removes the current workspace override.
+
+Saved values apply when you reopen Export. Changing controls for one export does not change defaults unless you explicitly save them. Workspace overrides take precedence over host defaults. Tool calls remain selectable even when excluded by default.
+
+Preferences are stored through Paseo’s host-side plugin settings, shared by clients connected to that host, and survive plugin reloads, updates, and daemon restarts. Removing the plugin deletes its settings. Personal paths and choices are not stored in this repository. Custom folders are created only when you save an export.
+
 ## Install locally
 
 Requires Paseo **0.13.0-beta.1 or a compatible later release**, including the app that renders client contributions. Enable plugins in Paseo settings, then:
