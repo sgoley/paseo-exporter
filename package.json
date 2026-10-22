@@ -1,0 +1,43 @@
+{
+  "name": "paseo-exporter",
+  "private": true,
+  "version": "0.1.0",
+  "files": [
+    "paseo-plugin.json",
+    "OVERVIEW.md",
+    "OVERVIEW.*.md",
+    "index.client.ts",
+    "index.client.tsx",
+    "index.server.ts",
+    "index.server.tsx",
+    "client/",
+    "server/",
+    "shared/"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@getpaseo/plugin": "0.13.0-beta.1",
+    "@tanstack/react-query": "^5.90.11",
+    "@types/node": "^26.6.5",
+    "@types/react": "~19.2.0",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3"
+  },
+  "description": "Export Paseo conversations as Markdown or JSON from a composer button, with clipboard and host folder destinations.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgoley/paseo-exporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sgoley/paseo-exporter/issues"
+  },
+  "homepage": "https://github.com/sgoley/paseo-exporter#readme"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "paseo-exporter",
+  "name": "Conversation exporter",
+  "description": "Export conversations as Markdown or JSON to your clipboard or a host folder.",
+  "requirements": {
+    "paseo": ">=0.13.0-beta.1"
+  }
+}

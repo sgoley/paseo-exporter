@@ -1,0 +1,9 @@
+Export a Paseo conversation as formatted Markdown or structured JSON. An Export button beside the session composer opens format, destination, and content options. The same controls are available through `/export` and the Command Center’s “Export conversation as Markdown or JSON” action.
+
+Choose your device’s clipboard, `~/Paseo Exports` on the connected host, a `Paseo Exports` folder inside the session’s working directory, or a custom absolute host folder. File exports create a new file each time. On a remote connection, host folders are on the remote machine.
+
+Markdown preserves message formatting and includes session metadata, numbered messages, tasks, notices, and collapsible reasoning and tool details. Both formats capture provider, model, and reasoning effort at export time, including configured values when available. JSON includes versioned session metadata and structured timeline entries. Historical model and effort changes are not exposed per message by Paseo. Reasoning, tool activity, and entry timestamps can each be omitted. A preview lets you inspect the result before saving.
+
+Requires Paseo 0.13.0-beta.1 or a compatible later release on both the daemon and app. No account, token, or external tool setup is needed. The plugin reads the selected session’s history and writes only when you export. Conversation content is sent from the daemon to the connected Paseo client for previews and clipboard copying. It is not sent to an external service by this plugin.
+
+Exports contain the history Paseo exposes. Content already removed by provider retention or compaction, attachment binaries, and separate child-agent conversations are not recovered. An active session is exported as a snapshot and may contain unfinished messages or running tools. JSON is an export format, not a Paseo backup/import format. Timestamps use the timeline’s timestamps as supplied by Paseo.
