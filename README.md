@@ -16,6 +16,16 @@ The Command Center action **Export conversation as Markdown or JSON** and `/expo
 
 Host exports go to `~/Paseo Exports`. Session exports go to `<session working directory>/Paseo Exports`. Custom folders accept absolute paths or `~/...`. Folders are created as needed, and files use a sanitized title, agent ID, timestamp, and random suffix. Existing files are never overwritten. Files are created with mode `0600`; newly created folders use `0700`, subject to platform filesystem support. Remote host destinations refer to the remote machine. Clipboard exports refer to the device running the app.
 
+## Screenshots
+
+Export controls beside the session composer:
+
+![Export composer popover](docs/images/export-popover.png)
+
+Full export panel with workspace defaults:
+
+![Export panel and saved defaults](docs/images/export-panel.png)
+
 ## Saved defaults
 
 Open **Export**, select your format, destination, and content options, then expand **Defaults**:
