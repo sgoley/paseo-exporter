@@ -1,6 +1,9 @@
-import type { PaseoApi } from "@getpaseo/client";
+import type { PluginHandlerContext } from "@getpaseo/plugin/server";
 
-type Timeline = ReturnType<PaseoApi["agents"]["ref"]>["timeline"];
+// The server bundle can see host SDK types, but a registry checkout does not
+// install @getpaseo/client. Derive the timeline from the handler context.
+type Paseo = PluginHandlerContext["paseo"];
+type Timeline = ReturnType<Paseo["agents"]["ref"]>["timeline"];
 export type HistoryPage = Awaited<ReturnType<Timeline["refetch"]>>;
 export type HistoryEntry = HistoryPage["entries"][number];
 
